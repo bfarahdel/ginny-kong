@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#168deb">
+  <title>Ginny Kong</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://storage.googleapis.com" crossorigin>
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision/vision_bundle.mjs" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <section class="stage" aria-label="Portrait paw control scene">
+      <img class="heart" src="images/Angelia-heart-cloud-claws-transparent.png" alt="Angelia written in a heart of clouds">
+      <img class="ginny-cloud" src="images/Ginny-cat-cloud-transparent.png" alt="Ginny the cat drawn in clouds">
+      <img class="heart gold-cloud" src="images/Angelia-cloud-gold.png" alt="" aria-hidden="true">
+      <img class="ginny-cloud gold-cloud" src="images/Ginny-cloud-gold.png" alt="" aria-hidden="true">
+      <img id="plane-sprites" src="images/toy-stunt-planes.png" hidden alt="">
+      <canvas id="arms" width="480" height="720" aria-hidden="true"></canvas>
+      <img id="portrait" src="images/ginny-kong-portrait-realistic.png" hidden alt="">
+      <canvas id="cat" width="480" height="720" role="img" aria-label="Ginny breathing, blinking, and watching the planes"></canvas>
+      <canvas id="sky" width="480" height="720" aria-hidden="true"></canvas>
+      <canvas id="paws" width="480" height="720" aria-label="Paws follow your camera hand movements"></canvas>
+      <canvas id="celebration" width="480" height="720" aria-hidden="true"></canvas>
+      <div class="preview" hidden aria-hidden="true"><video id="camera" autoplay muted playsinline></video></div>
+      <p id="status" role="status" aria-live="polite">Requesting camera access…</p>
+      <button id="replay" type="button" aria-label="Play again" hidden>↻</button>
+    </section>
+  </main>
+  <script>
+    if (location.protocol === 'file:') document.querySelector('#status').textContent = 'Open http://localhost:4175/ in your browser with the local server running. This game must run as a website, rather than opening the HTML file directly.';
+  </script>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
+
